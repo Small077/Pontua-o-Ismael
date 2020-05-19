@@ -6,7 +6,7 @@ int main()
 {
     char tc;
     double tm;
-    int qc,pa,svc,si,sfp;
+    int qc,pa,svc,si,sfp,D,C,B;
 
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
     cout << "--------------------------------" << endl;
@@ -31,14 +31,32 @@ int main()
     cout << endl;
     cout << "Quantas vezes o cliente atrasou o pagamento? " << endl;
     cin >> pa;
+     if (pa==1){
+        si=15;
+    }
+    else if (pa==0){
+        si=30;
+    }
+    else if (pa>1){
+        si=0;
+    }
     cout << "A maioria das compras foi em dinheiro, cartao, ou boleto (D/C/B)? " << endl;
     cin >> tc;
+    if (tc=='D'){
+        sfp=5;
+    }
+    else if (tc=='C' || tc=='B'){
+        sfp=10;
+    }
     cout << endl;
     cout << "Score de volume de compras = " << endl;
-    cout << svc;
+    cout << svc << " pontos";
     cout << endl;
     cout << "Score de inadimplencia = " << endl;
+    cout << si << " pontos";
+    cout << endl;
     cout << "Score de forma de pagamento = " << endl;
+    cout << sfp << " pontos";
     cout << endl;
     cout << "Classificaçao final = " << endl;
     return 0;
