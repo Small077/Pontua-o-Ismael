@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    char tc;
+    char tc,cf;
     double tm;
     int qc,pa,svc,si,sfp,D,C,B;
 
@@ -51,13 +51,23 @@ int main()
     cout << endl;
     cout << "Score de volume de compras = " << endl;
     cout << svc << " pontos";
-    cout << endl;
+    cout << endl;4
     cout << "Score de inadimplencia = " << endl;
     cout << si << " pontos";
     cout << endl;
     cout << "Score de forma de pagamento = " << endl;
     cout << sfp << " pontos";
     cout << endl;
-    cout << "Classificaçao final = " << endl;
+    cout << "Classificaçao final = ";
+    if (svc+si+sfp<25){
+       cout << "Cliente BRONZE";
+    }
+    else if (25<svc+si+sfp<75){
+         cout << "Cliente PRATA";
+    }
+     else if (svc+si+sfp>75){
+        cout << "Cliente OURO";
+    }
+    cout << endl;
     return 0;
 }
